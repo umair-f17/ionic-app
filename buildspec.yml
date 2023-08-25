@@ -13,7 +13,7 @@ phases:
       - . ~/.bashrc
       - apt -y install sdkmanager
       - sdkmanager "platforms;android-30" "build-tools;30.0.3"
-      - sdkmanager --licenses
+      - sdkmanager -y --licenses
       - npm install -g @ionic/cli
   pre_build:
     commands:

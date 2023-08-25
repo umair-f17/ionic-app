@@ -10,8 +10,8 @@ phases:
       - sudo apt -y install android-sdk
       - echo 'export ANDROID_SDK_ROOT=/usr/lib/android-sdk' >> ~/.bashrc
       - echo 'export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools' >> ~/.bashrc
-      - source ~/.bashrc
-      - apt install sdkmanager
+      - . ~/.bashrc
+      - apt -y install sdkmanager
       - sdkmanager "platforms;android-30" "build-tools;30.0.3"
       - sdkmanager --licenses
       - npm install -g @ionic/cli
@@ -21,10 +21,6 @@ phases:
   build:
     commands:
       - npm run build:prod
-      - npm install -g cordova
-      - ionic cordova platform add android
-      - ionic cordova build android --release
-      - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair/apk
 artifacts:
   files:
     - '**/*'

@@ -6,8 +6,8 @@ phases:
       nodejs: 18
     commands:
       - apt-get update
-      - apt install openjdk-11-jdk
-      - sudo apt install android-sdk
+      - apt install -y openjdk-11-jdk
+      - sudo apt -y install android-sdk
       - echo 'export ANDROID_SDK_ROOT=/usr/lib/android-sdk' >> ~/.bashrc
       - echo 'export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools' >> ~/.bashrc
       - source ~/.bashrc

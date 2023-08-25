@@ -5,6 +5,15 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - apt-get update
+      - apt install openjdk-11-jdk
+      - sudo apt install android-sdk
+      - echo 'export ANDROID_SDK_ROOT=/usr/lib/android-sdk' >> ~/.bashrc
+      - echo 'export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools' >> ~/.bashrc
+      - source ~/.bashrc
+      - apt install sdkmanager
+      - sdkmanager "platforms;android-30" "build-tools;30.0.3"
+      - sdkmanager --licenses
       - npm install -g @ionic/cli
   pre_build:
     commands:

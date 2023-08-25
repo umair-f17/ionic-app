@@ -15,7 +15,7 @@ phases:
       - npm install -g cordova
       - ionic cordova platform add android
       - ionic cordova build android --release
-      - aws s3 cp platforms/android/app/build/outputs/apk/release/app-fah.apk s3://ionic-app-umair/apk
+      - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair/apk
 artifacts:
   files:
     - '**/*'

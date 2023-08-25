@@ -22,9 +22,11 @@ phases:
     commands:
       - npm run build:prod
       - npm install -g cordova 
-      - ionic cordova platform add android --verbose
+      - ionic cordova platform add android 
+      - npm i -g cordova-res
+      - ng add @ionic/cordova-builders
       - ionic cordova build android --release
-      - aws s3 cp --recursive platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair
+      - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair
 artifacts:
   files:
     - '**/*'

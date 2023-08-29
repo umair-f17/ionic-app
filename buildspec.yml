@@ -23,7 +23,7 @@ phases:
       - npm run build:prod
       - npm install @capacitor/core
       - npm install @capacitor/cli --save-dev
-      - npm init @capacitor/app
+      - echo "y" | npx cap init
       - npx cap add android
       - cd android && ./gradlew assembleDebug && cd ..
       - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair

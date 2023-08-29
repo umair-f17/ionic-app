@@ -25,7 +25,6 @@ phases:
       - npm install @capacitor/cli --save-dev
       - npx cap init
       - npx cap add android
-      - ionic capacitor sync
       - cd android && ./gradlew assembleDebug && cd ..
       - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair
 artifacts:

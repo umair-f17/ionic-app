@@ -21,10 +21,12 @@ phases:
   build:
     commands:
       - npm run build:prod
-      - npm install -g cordova 
-      - ionic cordova platform add android 
-      - npm i -g cordova-res
-      - ionic cordova build android --release
+      - npm install @capacitor/core
+      - npm install @capacitor/cli --save-dev
+      - npx cap init
+      - npx cap add android
+      - ionic capacitor sync
+      - cd android && ./gradlew assembleDebug && cd ..
       - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair
 artifacts:
   files:

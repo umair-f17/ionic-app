@@ -23,7 +23,8 @@ phases:
       - npm run build:prod
       - npm install @capacitor/core
       - npm install @capacitor/cli --save-dev
-      - printf "myApp\ny" | npx cap init
+      #- printf "myApp\ny" | npx cap init
+      - npm install @capacitor/android
       - npx cap add android
       - cd android && ./gradlew assembleDebug && cd ..
 artifacts:

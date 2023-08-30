@@ -23,7 +23,7 @@ phases:
       - npm run build:prod
       - npm install @capacitor/core
       - npm install @capacitor/cli --save-dev
-      - printf "myApp\ncom.myApp.app\ny" | npx cap init
+      - npx cap init --web-dir=www --name="My App" --appId="com.myapp.app"
       - npm install @capacitor/android
       - npx cap add android
       - cd android && ./gradlew assembleDebug && cd ..

@@ -26,8 +26,7 @@ phases:
       - printf "myApp\ny" | npx cap init
       - npx cap add android
       - cd android && ./gradlew assembleDebug && cd ..
-      - aws s3 cp platforms/android/app/build/outputs/apk/release/* s3://ionic-app-umair
 artifacts:
   files:
     - '**/*'
-  base-directory: www
+  base-directory: android

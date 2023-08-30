@@ -20,4 +20,7 @@ const config: CapacitorConfig = {
   }
 };
 
-export default config;
+// Convert the config object to JSON format
+const jsonConfig = JSON.stringify(config, null, 2); // The second argument adds indentation for readability
+
+console.log(jsonConfig); // Print the JSON formatted configuration

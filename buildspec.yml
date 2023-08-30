@@ -13,7 +13,7 @@ phases:
       - . ~/.bashrc
       - apt -y install sdkmanager
       - sdkmanager "platforms;android-30" "build-tools;30.0.3"
-      - echo "y" | sdkmanager --licenses
+      - y | sdkmanager --licenses
       - npm install -g @ionic/cli@latest
   pre_build:
     commands:
@@ -23,7 +23,7 @@ phases:
       - npm run build:prod
       - npm install @capacitor/core
       - npm install @capacitor/cli --save-dev
-      - npx cap init --web-dir=www --name="My App" --appId="com.myapp.app"
+      - yes | npx cap init --web-dir=www myApp com.myapp.app
       - npm install @capacitor/android
       - npx cap add android
       - cd android && ./gradlew assembleDebug && cd ..
